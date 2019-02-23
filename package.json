@@ -13,6 +13,7 @@
     ],
     "dependencies": {
         "@sap/cds": "^3.5.2",
+        "@sap/cloud-samples-catalog": "https://github.com/SAP/cloud-samples-catalog.git#rel-1.0",
         "express": "^4.16.4",
         "hdb": "^0.16.0"
     },
