@@ -1,6 +1,16 @@
-using my.bookshop as my from '../db/data-model';
+namespace productcatalog;
+using productcatalog as prod from '../db/data-model';
+using clouds.products.CatalogService from '@sap/cloud-samples-catalog';
 
-
-service CatalogService {
-    @readonly entity Books as projection on my.Books;
+extend service CatalogService with {
+    
+    entity Reviews @(
+    	title: '{i18n>review}',
+    	Capabilities: {
+    		InsertRestrictions: { Insertable: false },
+    		UpdateRestrictions: { Updatable: false },
+    		DeleteRestrictions: { Deletable: false }
+    	}
+    ) as projection on prod.Reviews;
+    
 }
